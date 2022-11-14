@@ -54,7 +54,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "http://13.235.92.76",
+    "http://localhost:8000",
+]
 ROOT_URLCONF = 'planetpeacepeople.urls'
 
 TEMPLATES = [
@@ -76,7 +79,25 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'planetpeacepeople.wsgi.application'
-
+CORS_ALLOW_METHODS = [
+'DELETE',
+'GET',
+'OPTIONS',
+'PATCH',
+'POST',
+'PUT',
+]
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
