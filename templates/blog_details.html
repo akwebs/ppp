@@ -56,10 +56,8 @@
               <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
             </div>
             <ul class="social-icons">
-              <li><a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-              <li><a href="#"><i class="fab fa-behance"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             </ul>
           </div>
           <div class="navigation-area">
@@ -67,7 +65,7 @@
               <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                 <div class="thumb">
                   <a href="#">
-                    <img class="img-fluid" src="assets/img/post/preview.png" alt="">
+                    <img class="img-fluid" src="{% static 'img/post/preview.png' %}" alt="">
                   </a>
                 </div>
                 <div class="arrow">
@@ -77,16 +75,16 @@
                 </div>
                 <div class="detials">
                   <p>Prev Post</p>
-                  <a href="#">
-                    <h4 style="color: #2d2d2d;">Space The Final Frontier</h4>
+                  <a href="{{prev_blog.absolute_url}}">
+                    <h4 style="color: #2d2d2d;">{{prev_blog.title}}</h4>
                   </a>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                 <div class="detials">
                   <p>Next Post</p>
-                  <a href="#">
-                    <h4 style="color: #2d2d2d;">Telescopes 101</h4>
+                  <a href="{{next_blog.absolute_url}}">
+                    <h4 style="color: #2d2d2d;">{{next_blog.title}}</h4>
                   </a>
                 </div>
                 <div class="arrow">
@@ -96,7 +94,7 @@
                 </div>
                 <div class="thumb">
                   <a href="#">
-                    <img class="img-fluid" src="assets/img/post/next.png" alt="">
+                    <img class="img-fluid" src="{% static 'img/post/next.png' %}" alt="">
                   </a>
                 </div>
               </div>
@@ -247,42 +245,14 @@
           <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
             <ul class="list cat-list">
+              {% for c in category %}
               <li>
-                <a href="#" class="d-flex">
-                  <p>Resaurant food</p>
-                  <p>(37)</p>
-                </a>
+                  <a href="#" class="d-flex">
+                      <p>{{c.name| title}}</p>
+                      <p>({{c.blog_category.all|length}})</p>
+                  </a>
               </li>
-              <li>
-                <a href="#" class="d-flex">
-                  <p>Travel news</p>
-                  <p>(10)</p>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="d-flex">
-                  <p>Modern technology</p>
-                  <p>(03)</p>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="d-flex">
-                  <p>Product</p>
-                  <p>(11)</p>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="d-flex">
-                  <p>Inspiration</p>
-                  <p>(21)</p>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="d-flex">
-                  <p>Health Care</p>
-                  <p>(21)</p>
-                </a>
-              </li>
+              {% endfor %}
             </ul>
           </aside>
           <aside class="single_sidebar_widget popular_post_widget">
@@ -302,30 +272,11 @@
           <aside class="single_sidebar_widget tag_cloud_widget">
             <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
             <ul class="list">
+              {% for c in category %}
               <li>
-                <a href="#">project</a>
+                <a href="#">{{c.name| title}}</a>
               </li>
-              <li>
-                <a href="#">love</a>
-              </li>
-              <li>
-                <a href="#">technology</a>
-              </li>
-              <li>
-                <a href="#">travel</a>
-              </li>
-              <li>
-                <a href="#">restaurant</a>
-              </li>
-              <li>
-                <a href="#">life style</a>
-              </li>
-              <li>
-                <a href="#">design</a>
-              </li>
-              <li>
-                <a href="#">illustration</a>
-              </li>
+              {% endfor %}
             </ul>
           </aside>
           <aside class="single_sidebar_widget instagram_feeds">
@@ -333,32 +284,7 @@
             <ul class="instagram_row flex-wrap">
               <li>
                 <a href="#">
-                  <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
+                  <img class="img-fluid" src="{% static 'img/post/post_5.png' %}" alt="">
                 </a>
               </li>
             </ul>

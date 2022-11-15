@@ -218,6 +218,14 @@ ul {
 li {
     list-style: none;
 }
+.styled{
+    margin: 1em;
+    padding: 1em;
+    list-style: disc;
+}
+.styled li{
+    list-style: disc;
+}
 hr {
     border-bottom: 1px solid #eceff8;
     border-top: 0 none;
@@ -1941,8 +1949,8 @@ hr {
     }
 }
 .footer-padding {
-    padding-top: 160px;
-    padding-bottom: 120px;
+    padding-top: 50px;
+    padding-bottom: 40px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .footer-padding {
@@ -3010,6 +3018,9 @@ hr {
     transition: 0.4s;
     width: 100%;
     transform: scale(1);
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 .service-area .single-cat .cat-cap {
     position: relative;
@@ -3017,14 +3028,15 @@ hr {
     bottom: 19px;
 }
 .service-area .single-cat .cat-cap h5 > a {
-    background: #fff;
+    background: #6fd66c;
+    background: linear-gradient(90deg, #6fd66c 0%, #48c1b9 100%);
     margin: 0 20px;
     text-decoration: underline transparent;
     font-size: 24px;
     font-weight: 400;
     display: block;
     font-family: "Montserrat", sans-serif;
-    color: #425140;
+    color: #fff;
     padding: 20px 0;
     line-height: 1;
 }
@@ -3058,7 +3070,9 @@ hr {
 }
 .our-cases-area .single-cases .cases-img {
     overflow: hidden;
-    max-height: 180px;
+    max-height: 250px;
+    object-fit: cover;
+    object-position: center;
 }
 .our-cases-area .single-cases .cases-img img {
     width: 100%;
@@ -3327,7 +3341,7 @@ hr {
     -o-transform: rotateY(0deg);
 }
 .number a {
-    font-size: 26px !important;
+    font-size: 22px !important;
     color: #fff !important;
     margin-bottom: 23px;
     display: block;
@@ -4596,7 +4610,7 @@ hr {
     display: block;
 }
 .contact-section {
-    padding: 130px 0 100px;
+    padding: 90px 0 100px;
 }
 @media (max-width: 991px) {
     .contact-section {

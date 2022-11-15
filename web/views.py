@@ -3,9 +3,10 @@ from .models import Blog, BlogCategory, Projects, Contact
 from django.contrib import messages
 # Create your views here.
 def index(request):
+    count = Contact.objects.all().count()
     blogs = Blog.objects.all()[0:3]
     projects = Projects.objects.all()[0:3]
-    return render(request, 'index.html', {'blogs':blogs, 'projects':projects})
+    return render(request, 'index.html', {'blogs':blogs, 'projects':projects, 'count':count})
 
 def blog_category(request, slug):
     category = BlogCategory.objects.all()
@@ -21,7 +22,16 @@ def blogdetails(request, slug):
     category = BlogCategory.objects.all()
     blogs = Blog.objects.exclude(slug=slug).all()[0:3]
     blog = get_object_or_404(Blog, slug=slug)
-    return render(request, 'blog_details.html', {'blog':blog, 'blogs':blogs, 'category':category})
+    next_blog = Blog.objects.filter(id__gt=blog.id).first()
+    prev_blog = Blog.objects.filter(id__lt=blog.id).last()
+    context = {
+        'blog':blog,
+        'blogs':blogs,
+        'category':category,
+        'next_blog':next_blog,
+        'prev_blog':prev_blog
+    }
+    return render(request, 'blog_details.html', context)
 
 def about(request):
     return render(request, 'about.html')
@@ -43,7 +53,7 @@ def contact(request):
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
-        gender = request.POST['gender']
+        # gender = request.POST['gender']
         city = request.POST['city']
         country = request.POST['country']
         message = request.POST['message']
@@ -51,7 +61,7 @@ def contact(request):
             name=name,
             email=email,
             phone=phone,
-            gender=gender,
+            # gender=gender,
             city=city,
             country=country,
             message=message

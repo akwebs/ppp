@@ -11,5 +11,5 @@ urlpatterns = [
     path('blog/<slug:slug>/', blogdetails, name='blogdetails'),
     path('projects/', projects, name='projects'),
     path('projects/<slug:slug>/', projectdetails, name='projectdetails'),
-    path('contact/', contact, name='contact'),
+    path('connect/', contact, name='contact'),
 ]

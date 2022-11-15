@@ -9,6 +9,45 @@
 {% endfor %}
 {% endif %}
 <!-- slider Area Start-->
+
+<!-- model pop up form for join now -->
+<div class="modal fade" id="joinnow" tabindex="-1" role="dialog" aria-labelledby="joinnow" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Join Now</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'web:contact' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model pop up form for join now -->
+
+
+
 <div class="slider-area position-relative">
     <div class="slider-active dot-style">
         <!-- Single Slider -->
@@ -171,8 +210,8 @@
         <div class="right-content pl-60">
             <!-- section tittle -->
             <div class="section-tittle section-tittle2 mb-30">
-                <span> Why you should be one of us </span>
-                <h3 style="font-size: 150%;"> We volunteer ourselves to mend our relationship with nature </h3>
+                <span style="font-size: 150%;">Why you should be one of us</span>
+                <h3>We volunteer ourselves to mend our relationship with nature</h3>
             </div>
             <div class="support-caption">
                 <p class="pera-top"> To secure our future, we need to take a sustainable growth path, where our ways of
@@ -180,7 +219,10 @@
                     ensures and empowers us to restore a healthy relationship with nature - maintaining its finer
                     balance of biodiversity
                     and ecosystems.</p>
-                <a href="#" class="border-btn">Join Now</a>
+                <!-- <a href="{% url 'web:contact' %}" class="border-btn">Join Now</a> -->
+                <!-- joinnow model button  -->
+                <button type="button" class="border-btn" data-toggle="modal" data-target="#joinnow">
+                    Join Now</button>
             </div>
         </div>
         <div class="right-content">
@@ -190,7 +232,7 @@
             </div>
             <div class="support-img-cap text-center d-flex">
                 <div class="single-one">
-                    <span>230</span>
+                    <span>{{count}}</span>
                     <p>Volunteers worldwide</p>
                 </div>
             </div>
@@ -205,8 +247,9 @@
             <div class="col-xl-10 col-lg-10 ">
                 <!-- Section Tittle -->
                 <div class="section-tittle text-center mb-80">
-                    <h2>We lose forest areas the size of 27 football fields every minute</h2>
-                    <p class="pl-20 pr-20">Let us begin to live within the means of the planet, while securing our own well-being and the ecosystems on which we depend.</p>
+                    <h2>In only 45 years , we loose 69% of population of different species</h2>
+                    <p class="pl-20 pr-20">Biodiversity is the foundation of virtually all
+                        terrestrial ecosystems and provide fundamental support for existence and contunity  of life on earth, including human beings.</p>
                 </div>
             </div>
         </div>

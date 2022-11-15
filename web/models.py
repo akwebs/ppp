@@ -87,11 +87,11 @@ class Contact(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     phone = models.CharField(max_length=200)
-    gender_choices = (
-        ('male','Male'),
-        ('female','Female'),
-    )
-    gender = models.CharField(max_length=200, choices=gender_choices)
+    # gender_choices = (
+    #     ('male','Male'),
+    #     ('female','Female'),
+    # )
+    # gender = models.CharField(max_length=200, choices=gender_choices)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
     message = models.TextField()

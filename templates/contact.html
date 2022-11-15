@@ -1,13 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% if messages %} 
-{% for message in messages %}
-<div class="alert alert-info text-center">
-    {{ message }}
-</div>
-{% endfor %}
-{% endif %}
     <!--? Hero Start -->
     <div class="slider-area2">
         <div class="slider-height2 d-flex align-items-center">
@@ -15,11 +8,11 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 pt-70">
-                            <h2>Contact</h2>
+                            <h2>Connect</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{% url 'web:index' %}">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Contact</a></li> 
+                                    <li class="breadcrumb-item"><a href="#">Connect</a></li> 
                                 </ol>
                             </nav>
                         </div>
@@ -29,12 +22,19 @@
         </div>
     </div>
     <!-- Hero End -->
+    {% if messages %} 
+    {% for message in messages %}
+    <div class="alert alert-info text-center">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
     <!--?  Contact Area start  -->
     <section class="contact-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contact-title">Get in Touch</h2>
+                    <h2 class="contact-title">Connect with us</h2>
                 </div>
                 <div class="col-lg-8">
                     <form class="form-contact contact_form" action="" method="POST" id="contactForm" novalidate="novalidate">
@@ -45,20 +45,20 @@
                                     <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
                                 </div>
                             </div>
                             <!-- gender -->
-                            <div class="col-sm-6">
+                            <!-- <div class="col-sm-6">
                                 <div class="form-group">
                                     <select name="gender" id="gender">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
@@ -97,22 +97,20 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-home"></i></span>
                         <div class="media-body">
-                            <h3>Buttonwood, California.</h3>
-                            <p>Rosemead, CA 91770</p>
+                            <p>A-833, Indra Vihar, Kota,
+                            </br> Rajasthan, India 324005</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                         <div class="media-body">
-                            <h3>+1 253 565 2365</h3>
-                            <p>Mon to Fri 9am to 6pm</p>
+                            <p>+91-941 417 8884</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-email"></i></span>
                         <div class="media-body">
-                            <h3>support@colorlib.com</h3>
-                            <p>Send us your query anytime!</p>
+                            <p>connect@planetpeacepeople.org</p>
                         </div>
                     </div>
                 </div>
