@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hi4=vc9(iv$h&7%6++0mi7ulw)+b9ykqu6z6gd_2+ap@9igk-!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS=['planetpeacepeople.org','*.planetpeacepeople.org','localhost','13.235.92.76',]
 
