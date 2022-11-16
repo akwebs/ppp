@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-hi4=vc9(iv$h&7%6++0mi7ulw)+b9ykqu6z6gd_2+ap@9igk-!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS=['planetpeacepeople.org','*.planetpeacepeople.org','localhost',]
+ALLOWED_HOSTS=['planetpeacepeople.org','*.planetpeacepeople.org','localhost','13.235.92.76',]
 
 
 # Application definition
@@ -59,6 +59,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://www.planetpeacepeople.org/',
     'http://localhost:3000',
     'http://localhost:8000',
+    'http://13.235.92.76/',
 ]
 ROOT_URLCONF = 'planetpeacepeople.urls'
 
