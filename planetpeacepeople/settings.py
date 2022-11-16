@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hi4=vc9(iv$h&7%6++0mi7ulw)+b9ykqu6z6gd_2+ap@9igk-!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS=['planetpeacepeople.org','*.planetpeacepeople.org','localhost',]
 
 
 # Application definition
@@ -55,8 +55,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://13.235.92.76",
-    "http://localhost:8000",
+    'https://planetpeacepeople.org/',
+    'https://www.planetpeacepeople.org/',
+    'http://localhost:3000',
+    'http://localhost:8000',
 ]
 ROOT_URLCONF = 'planetpeacepeople.urls'
 
@@ -105,7 +107,7 @@ CORS_ALLOW_HEADERS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, "db.sqlite3")
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
